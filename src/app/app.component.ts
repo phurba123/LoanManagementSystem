@@ -1,46 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, ViewChild, AfterViewInit, SimpleChanges } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Subscription } from 'rxjs'
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'LoanManagementSystem';
-  countries = COUNTRIES;
-  
+export class AppComponent implements AfterViewInit {
+	title = 'LoanManagementSystem';
+	subscription!: Subscription;
+
+	@ViewChild(MatSidenav)
+	sidenav!: MatSidenav;
+
+	constructor(private _breakObserver: BreakpointObserver) {}
+
+	// accessing view child after view is initialized
+	ngAfterViewInit(): void {
+		this.subscription = this._breakObserver.observe(['(max-width: 600px)']).subscribe((res: BreakpointState) => {
+			console.log('observer res : ', res)
+			if (res.matches) {
+				this.sidenav.mode = 'over';
+				this.sidenav.close();
+			} else {
+				this.sidenav.mode = 'side';
+				this.sidenav.open();
+			}
+		});
+	}
+
+	ngOnDestroy(): void {
+		this.subscription.unsubscribe();
+	}
 }
 
-interface Country {
-	name: string;
-	flag: string;
-	area: number;
-	population: number;
-}
-
-const COUNTRIES: Country[] = [
-	{
-		name: 'Russia',
-		flag: 'f/f3/Flag_of_Russia.svg',
-		area: 17075200,
-		population: 146989754,
-	},
-	{
-		name: 'Canada',
-		flag: 'c/cf/Flag_of_Canada.svg',
-		area: 9976140,
-		population: 36624199,
-	},
-	{
-		name: 'United States',
-		flag: 'a/a4/Flag_of_the_United_States.svg',
-		area: 9629091,
-		population: 324459463,
-	},
-	{
-		name: 'China',
-		flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-		area: 9596960,
-		population: 1409517397,
-	},
-];
