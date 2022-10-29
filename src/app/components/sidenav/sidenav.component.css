@@ -1,0 +1,5 @@
+.selected {
+    /* accent color */
+    color: var(--primary-color);
+    background-color: unset;
+}

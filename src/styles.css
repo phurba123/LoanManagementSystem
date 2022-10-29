@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    /* --accent-color: #69f0ae; */
+    --primary-color: #009688;
+    --mt: 10vh;
+    --div-width: 80%;
+    --padding: 20px;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

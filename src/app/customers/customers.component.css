@@ -1,0 +1,13 @@
+/* section {
+} */
+.customer-heading {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+}
+.customer-table {
+    margin-top: var(--mt);
+    overflow-x: auto;
+    padding: 8px;
+}

@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { BootstrapModule } from './ngbootstrap.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModules } from './material.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    PageNotFoundComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

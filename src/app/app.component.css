@@ -5,7 +5,7 @@ mat-toolbar {
 
 mat-sidenav {
     /* margin: 16px; */
-    width: 200px;
+    width: 15%;
     /* border-right: none; */
     /* background: #002b5c; */
     /* color: white; */
@@ -17,12 +17,13 @@ mat-sidenav {
 mat-sidenav-container {
     height: 90vh;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: auto;
 }
 
 mat-sidenav-content {
-    width: 100%;
+    width: 85%;;
     height: 100%;
     box-sizing: border-box;
     overflow-y: auto;
+    padding: var(--padding);
 }
