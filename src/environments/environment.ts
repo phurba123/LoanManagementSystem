@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL_API: "http://localhost:3000",
+  CUSTOMER_ENDPOINTS: {
+    CUSTOMER_BASE_ENDPOINT: "/customers",
+    GET_ALL_CUSTOMERS: "/",
+    CREATE_CUSTOMER: "/create",
+    DELETE_CUSTOMER: "/delete",
+    EDIT_CUSTOMER: "/edit"
+  }
 };
 
 /*

@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<mat-dialog-content>
+    <form class="addEditForm" [formGroup]="customerForm">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field class="lastname" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field class="email" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+
+        <mat-form-field class="contactNo" appearance="fill">
+            <mat-label>Contact No</mat-label>
+            <input matInput type="number" placeholder="Contact No." formControlName="contactNo">
+        </mat-form-field>
+
+        <mat-form-field class="department" appearance="fill">
+            <mat-label>Department</mat-label>
+            <input matInput placeholder="Department" formControlName="department">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close color="warn">Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button (click)= "onSubmit()" mat-stroked-button [mat-dialog-close]="true" color="primary">
+        Done
+    </button>
+</mat-dialog-actions>

@@ -1,10 +1,17 @@
 <section>
     <div class="customer-heading">
-        <h3>Customers</h3>
-        <button mat-stroked-button color="primary">Add</button>
+        <h2>Customers</h2>
+        <button mat-stroked-button color="primary" (click)="openAddDialog()">Add</button>
     </div>
 
-    <div class="customer-table">
-        <lms-table [displayedColumns]= "displayColumn" [tableDataSource]= "tableData"></lms-table>
+    <div class="customer-table" *ngIf="customerList">
+        <lms-table
+        [displayedColumns]= "displayColumn" 
+        [tableDataSource]= "customerList"
+        [enableDelete]= "true"
+        (dataToDelete)= "deleteCustomer($event)"
+        [enableEdit]= "true"
+        (dataToEdit)= "openEditCustomer($event)">
+        </lms-table>
     </div>
 </section>

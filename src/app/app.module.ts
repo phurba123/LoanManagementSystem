@@ -9,6 +9,7 @@ import { MaterialModules } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     AppRoutingModule,
     BootstrapModule,
     BrowserAnimationsModule,
-    MaterialModules
+    MaterialModules,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

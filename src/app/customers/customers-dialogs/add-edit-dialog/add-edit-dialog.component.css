@@ -1,0 +1,7 @@
+mat-form-field.lastname {
+    margin-left: 10px;
+}
+
+mat-form-field.contactNo, mat-form-field.email, mat-form-field.department {
+    display: block;
+}

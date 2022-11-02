@@ -5,11 +5,13 @@ import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
 import { MaterialModules } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
+import { AddEditDialogComponent } from './customers-dialogs/add-edit-dialog/add-edit-dialog.component';
 
 
 @NgModule({
   declarations: [
-    CustomersComponent
+    CustomersComponent,
+    AddEditDialogComponent
   ],
   imports: [
     CommonModule,
