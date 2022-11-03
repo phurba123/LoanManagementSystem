@@ -22,6 +22,7 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('table data source : ', this.tableDataSource)
   }
 
   emitDeleteEvent(customer: Customer): void {

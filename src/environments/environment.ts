@@ -11,6 +11,12 @@ export const environment = {
     CREATE_CUSTOMER: "/create",
     DELETE_CUSTOMER: "/delete",
     EDIT_CUSTOMER: "/edit"
+  },
+  LOAN_ENDPOINTS: {
+    LOAN_BASE_ENDPOINT: "/loans",
+    GET_ALL_LOANS: "/",
+    CREATE_LOAN: "/create",
+    EDIT_LOAN: "/edit"
   }
 };
 

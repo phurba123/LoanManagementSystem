@@ -1,7 +1,7 @@
 <table *ngIf="tableDataSource" mat-table [dataSource]="tableDataSource" class="mat-elevation-z8">
 
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <th mat-header-cell *matHeaderCellDef> {{column| titlecase}} </th>
         <ng-container *ngIf="column == 'SN' ">
             <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
         </ng-container>

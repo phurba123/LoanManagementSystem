@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<mat-dialog-content>
+    <form class="addEditForm" [formGroup]="loanForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Loan Type</mat-label>
+            <input matInput placeholder="Loan Type" formControlName="loanType">
+            <mat-hint>Education, Personal, Vehichle, Commercial etc </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="totalAmount" appearance="fill">
+            <mat-label>Total Amount</mat-label>
+            <input matInput type="number" placeholder="Total Amount" formControlName="totalAmount">
+        </mat-form-field>
+
+        <mat-form-field class="customers" appearance="fill" *ngIf="customers">
+            <mat-label>Customer</mat-label>
+            <mat-select formControlName= "customer">
+                <mat-option *ngFor="let customer of customers" [value]="customer">
+                    {{customer.firstName + ' ' + customer.lastName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close color="warn">Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button (click)="onSubmit()" mat-stroked-button [mat-dialog-close]="true" color="primary">
+        Done
+    </button>
+</mat-dialog-actions>

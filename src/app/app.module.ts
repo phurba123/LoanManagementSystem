@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BootstrapModule } from './ngbootstrap.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModules } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BootstrapModule,
     BrowserAnimationsModule,
     MaterialModules,
     HttpClientModule

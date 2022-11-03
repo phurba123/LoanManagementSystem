@@ -10,3 +10,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.empty-text {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    text-align: center;
+}

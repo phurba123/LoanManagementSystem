@@ -1,0 +1,15 @@
+.loans-heading {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+}
+.loans-table {
+    margin-top: var(--mt);
+    overflow-x: auto;
+    padding: 8px;
+}
+
+.empty-loan {
+    margin-top: 10vh;
+}

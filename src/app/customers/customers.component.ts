@@ -14,7 +14,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CustomersComponent implements OnInit, OnDestroy {
 
-  // mock table column and data for customer table
   displayColumn = ['SN', 'firstName', 'lastName', 'contactNo', 'email', 'dob', 'department', 'actions'];
   customerResults: any;
   customerList!: Customer[];
@@ -40,7 +39,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
       // simple formatting of date
       this.customerList.forEach((customer: Customer )=> {
         if(customer.dob) {
-          customer.dob = new Date(customer.dob).toLocaleDateString()
+          customer.dob = this.formattedDateString(customer.dob);
         }
       });
     })
@@ -76,7 +75,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
     this._customerService.createCustomer(customer)
     .pipe(takeUntil(this.onDestroy$))
     .subscribe((res: ApiResponse) => {
-      res.data.dob = new Date(res.data.dob).toLocaleDateString();
+      res.data.dob = this.formattedDateString(res.data.dob);
       this.customerList = [...this.customerList, res.data];
       this.showSnackbar("Customer Created");
     })
@@ -127,7 +126,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
         this.customerList =  this.customerList.map((singleCustomer: Customer) => {
           if(singleCustomer._id === id) {
             singleCustomer = res.data;
-            singleCustomer.dob = new Date(singleCustomer.dob).toLocaleDateString()
+            singleCustomer.dob = this.formattedDateString(singleCustomer.dob);
           };
           return singleCustomer;
         })
@@ -136,6 +135,10 @@ export class CustomersComponent implements OnInit, OnDestroy {
         this.showSnackbar("Some Error Occured");
       }
     )
+  }
+
+  formattedDateString(date: any) {
+    return new Date(date).toLocaleDateString();
   }
 
   showSnackbar(message: string) {

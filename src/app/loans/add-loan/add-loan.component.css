@@ -1,0 +1,7 @@
+mat-form-field.customers {
+    display: block;
+    margin-top: 5vh;
+}
+mat-form-field.totalAmount {
+    margin-left: 10px;
+}

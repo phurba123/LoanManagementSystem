@@ -21,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
   exports:[
     TableComponent,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ]
 })
 export class SharedModule { }

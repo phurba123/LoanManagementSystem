@@ -9,8 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 
-const modules = [MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatIconModule]
+const modules = [MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatIconModule, MatSelectModule]
 
 @NgModule({
     imports: [...modules],
